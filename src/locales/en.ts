@@ -6,8 +6,9 @@ export default {
     part: 'Effortless',
     partSecond: 'Creating',
   },
-  frontend: 'Frontend',
-  backend: 'Backend',
+  login: {
+    title: 'Login',
+  },
   notFound: {
     title: '404 - Not Found',
     desc: 'The page you are looking for does not exist or has been moved.',
@@ -19,13 +20,4 @@ export default {
     about: 'About',
     contact: 'Contact',
   },
-  download: 'Download',
-  resume: 'Resume',
-  workTogether: "Let's work together",
-  direction: 'Frontend & Software developer',
-  aboutMeMore: 'More information about me',
-  aboutMe: 'About me',
-  aboutMeShortDesc:
-    "👋 Hello! I'm a freelance creative based in Paris, France.I specialize in crafting beautiful web experiences and capturing moments through my lens.",
-  needFrontendQuestion: 'Need a Frontend developer?',
 } as const

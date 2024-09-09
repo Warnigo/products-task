@@ -1,5 +1,3 @@
-import { Introduction } from '@/widgets/Introduction'
-
-const Home = () => <Introduction />
+const Home = () => <div>home</div>
 
 export default Home

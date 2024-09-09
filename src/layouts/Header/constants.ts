@@ -7,11 +7,11 @@ export const menu = [
   },
   {
     title: 'layout.about',
-    link: ROUTES.about,
+    link: ROUTES.home,
   },
   {
     title: 'layout.contact',
-    link: ROUTES.contact,
+    link: ROUTES.home,
   },
 ] as const
 

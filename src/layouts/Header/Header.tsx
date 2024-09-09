@@ -3,19 +3,17 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion } from 'framer-motion'
-import { ArrowDownToLine, FileDown } from 'lucide-react'
-import { AnimateButton, Logo } from '@/components'
-import { ROUTES } from '@/constants'
+import { Logo } from '@/components'
 import { useHeaderScroll } from '@/helpers/hooks'
+import { getStripLocale } from '@/helpers/utils'
 import { cn } from '@/lib'
 import { useI18n } from '@/locales/client'
-import { getStripLocale } from '@/utils'
 import { menu } from './constants'
 import { AnimatedContainer, AnimatedMenuItem, AnimatedWrapper } from './HeaderAnimations'
 import { SwitcherLanguages } from './SwitcherLanguages'
 import { SwitcherTheme } from './SwitcherTheme'
 
-type TranslationKey = 'layout.home' | 'layout.about' | 'layout.contact' | 'download' | 'resume'
+type TranslationKey = 'layout.home' | 'layout.about' | 'layout.contact'
 
 const Header = () => {
   const pathname = usePathname()
@@ -48,15 +46,6 @@ const Header = () => {
         </div>
 
         <div className="flex items-center gap-3">
-          <AnimateButton
-            role={t('download')}
-            roleIcon={<FileDown className="size-4" />}
-            className="flex w-24 items-center justify-center gap-2"
-          >
-            <ArrowDownToLine className="size-4" />
-            <Link href={ROUTES.resume}>{t('resume')}</Link>
-          </AnimateButton>
-
           <AnimatedWrapper>
             <SwitcherTheme />
           </AnimatedWrapper>
