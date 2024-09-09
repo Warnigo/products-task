@@ -1,4 +1,4 @@
-export { APP_LINK } from './env'
+export { APP_LINK, DEFAULT_PASSWORD, DEFAULT_USERNAME } from './env'
 export {
   PROTECTED_ROUTES,
   PROTECTED_ROUTES_VALUES,

@@ -1,7 +1,7 @@
 import { Form } from './Form'
 
 const Login = () => (
-  <div className="flex h-screen items-center justify-center">
+  <div className="container flex h-screen items-center justify-center">
     <Form />
   </div>
 )

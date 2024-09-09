@@ -9,6 +9,10 @@ export default {
   login: {
     title: 'Login',
   },
+  email: 'Email',
+  username: 'Username',
+  password: 'Password',
+  enter: 'Enter',
   notFound: {
     title: '404 - Not Found',
     desc: 'The page you are looking for does not exist or has been moved.',

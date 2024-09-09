@@ -8,7 +8,7 @@ import axios, {
   InternalAxiosRequestConfig,
 } from 'axios'
 import { APP_LINK } from '@/constants'
-import { clearApp, getUserCredentials } from '@/store/app'
+import { clearApp, getUserCredentials } from '@/stores/app'
 import { Methods } from '@/types'
 
 const TIME_OUT = 30_000
