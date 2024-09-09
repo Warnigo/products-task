@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "usernamehw.errorlens",
+        "austenc.tailwind-docs",
+        "streetsidesoftware.code-spell-checker",
+        "bradlc.vscode-tailwindcss",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint"
+    ]
+}
