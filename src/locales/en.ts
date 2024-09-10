@@ -21,6 +21,7 @@ export default {
   username: 'Username',
   password: 'Password',
   enter: 'Enter',
+  profile: 'Profile',
   loading: 'Loading',
   notFound: {
     title: '404 - Not Found',

@@ -47,7 +47,7 @@ const Form = () => {
     const requestParams: LoginParams = {
       username: formData.username,
       password: formData.password,
-      expiresInMins: 30,
+      expiresInMins: 60,
     }
 
     login(requestParams, {

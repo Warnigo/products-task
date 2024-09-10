@@ -1,3 +1,4 @@
+export { getCookies } from './getCookie'
 export { getInitials } from './getInitials'
 export { getMetadata } from './getMetadata'
 export { getStripLocale } from './getStripLocale'

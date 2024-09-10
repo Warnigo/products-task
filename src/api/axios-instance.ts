@@ -45,7 +45,7 @@ class AxiosService {
       try {
         window.localStorage.clear()
         clearApp()
-        window.location.reload()
+        // window.location.reload()
       } catch (logoutError) {
         console.error('Error while trying to logout:', logoutError)
       }
