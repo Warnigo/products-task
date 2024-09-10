@@ -28,7 +28,7 @@ class AxiosService {
 
   private handleRequest = (config: InternalAxiosRequestConfig): InternalAxiosRequestConfig => {
     const userCredentials = getUserCredentials()
-    const accessToken = userCredentials?.accessToken
+    const accessToken = userCredentials?.token
 
     if (accessToken) {
       config.headers.Authorization = `Bearer ${accessToken}`

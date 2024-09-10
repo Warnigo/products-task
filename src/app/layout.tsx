@@ -5,7 +5,7 @@ import { Metadata } from 'next'
 import { Provider } from '@/providers'
 
 export const metadata: Metadata = {
-  title: "Abubakir Shavkatov's tas",
+  title: "Abubakir Shavkatov's task",
   description: "Abubakir Shavkatov's task",
 }
 

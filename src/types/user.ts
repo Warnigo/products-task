@@ -5,7 +5,7 @@ export enum Gender {
   FEMALE = 'female',
 }
 
-export type UserInfo = {
+export interface UserInfo {
   id: number
   userName: string
   email: string

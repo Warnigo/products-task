@@ -1,5 +1,7 @@
 export const PUBLIC_ROUTES = {
   login: '/login',
+  register: '/register',
+  forgotPassword: '/forgot-password',
 }
 
 export const PROTECTED_ROUTES = {

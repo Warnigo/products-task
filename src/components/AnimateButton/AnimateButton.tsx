@@ -9,10 +9,11 @@ interface Props extends PropsWithChildren {
   buttonVariant?: string
   roleIcon?: ReactElement
   variant?: 'default' | 'outline'
+  disabled?: boolean
 }
 
 export const AnimateButton: FC<Props> = memo(
-  ({ role, className, variant = 'default', children, roleIcon }) => {
+  ({ role, className, variant = 'default', children, roleIcon, disabled = false }) => {
     const [hovered, setHovered] = useState('')
 
     return (
@@ -25,10 +26,10 @@ export const AnimateButton: FC<Props> = memo(
         <div className="flex w-full items-center justify-center">
           <AnimatePresence>
             <motion.div
-              onMouseEnter={() => setHovered(role)}
+              onMouseEnter={() => !disabled && setHovered(role)}
               onMouseLeave={() => setHovered('')}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={!disabled ? { scale: 1.03 } : undefined}
+              whileTap={!disabled ? { scale: 0.95 } : undefined}
               className="w-full"
             >
               <Button
@@ -36,7 +37,9 @@ export const AnimateButton: FC<Props> = memo(
                 className={cn(
                   'relative w-full overflow-hidden transition-all duration-300',
                   buttonVariants,
+                  disabled && 'cursor-not-allowed opacity-50',
                 )}
+                disabled={disabled}
               >
                 <motion.span
                   initial={{ y: 0 }}

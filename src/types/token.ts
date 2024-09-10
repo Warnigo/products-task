@@ -1,9 +1,9 @@
 export type Tokens = {
-  accessToken: string
+  token: string
   refreshToken: string
 }
 
 export const enum ResToken {
-  AccessToken = 'accessToken',
+  Token = 'Token',
   RefreshToken = 'refreshToken',
 }

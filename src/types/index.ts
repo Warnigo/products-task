@@ -1,5 +1,5 @@
 export { Methods } from './api-methods'
-export type { FormValues } from './auth'
+export type { FormValues, LoginParams } from './auth'
 export type { AuthState } from './auth-state'
 export type { Locale, LocaleProps } from './locale'
 export type { ThemeStore } from './theme'

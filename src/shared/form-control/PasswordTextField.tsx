@@ -31,7 +31,7 @@ export const PasswordTextField = ({ name, className, ...restProps }: Props) => {
       <Button
         type="submit"
         size="icon"
-        className="absolute inset-y-0 right-0 flex items-center bg-transparent px-2 text-primary/50 hover:bg-transparent hover:text-primary hover:shadow-xl"
+        className="absolute inset-y-0 right-0 flex items-center bg-transparent px-2 text-primary/50 shadow-none hover:bg-transparent hover:text-primary"
         onClick={handlePasswordVisibility}
       >
         {isPasswordVisible ? <EyeOff className="size-5" /> : <Eye className="size-5" />}

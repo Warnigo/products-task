@@ -8,11 +8,20 @@ export default {
   },
   login: {
     title: 'Login',
+    noAccount: "I don't have account",
+    error: 'Login failed. Please try again.',
+  },
+  register: {
+    title: 'Register',
+  },
+  forgotPassword: {
+    title: 'Forgot password',
   },
   email: 'Email',
   username: 'Username',
   password: 'Password',
   enter: 'Enter',
+  loading: 'Loading',
   notFound: {
     title: '404 - Not Found',
     desc: 'The page you are looking for does not exist or has been moved.',
