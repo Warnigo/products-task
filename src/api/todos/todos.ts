@@ -1,4 +1,4 @@
-import { Response, Todo, TodoAddParams } from '@/types'
+import { Todo, TodoAddParams, TodosResponse } from '@/types'
 import { axiosInstance } from '../axios-instance'
 import { endpoints } from '../endpoints'
 
@@ -9,7 +9,7 @@ export type deleteTodoProps = {
 
 export const getTodos = async () => {
   try {
-    const data = await axiosInstance.get<Response<Todo[]>>(endpoints.todos, { useAuth: false })
+    const data = await axiosInstance.get<TodosResponse<Todo[]>>(endpoints.todos, { useAuth: false })
 
     return data
   } catch (error) {

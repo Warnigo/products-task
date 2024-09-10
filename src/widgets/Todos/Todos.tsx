@@ -4,21 +4,21 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { ChevronRight } from 'lucide-react'
 import { AnimateButton, Spinner, TruncateText } from '@/components'
-import { Avatar, AvatarFallback, AvatarImage, Card, CardContent, CardHeader } from '@/components/ui'
+import { Card, CardContent, CardHeader } from '@/components/ui'
 import { ROUTES } from '@/constants'
 import { useIntersectionObserver } from '@/helpers/hooks'
-import { getInitials } from '@/helpers/utils'
 import { useI18n } from '@/locales/client'
 import { FadeInUp } from '@/shared/motion'
 import { useGetTodos } from '@/shared/query-hooks'
+import User from './User'
 
 const Todos = () => {
   const t = useI18n()
-  const { data, isLoading } = useGetTodos()
+  const { data: todosData, isLoading: isTodosLoading } = useGetTodos()
   const router = useRouter()
   const [ref] = useIntersectionObserver({ threshold: 0.5 })
 
-  const todos = data?.todos
+  const todos = todosData?.todos
 
   const handleRouteTodoUser = (todoId: number) => {
     router.push(ROUTES.singleTodo.replace(':id', String(todoId)))
@@ -28,7 +28,7 @@ const Todos = () => {
     return null
   }
 
-  if (!data?.limit || isLoading) {
+  if (!todosData?.limit || isTodosLoading) {
     return <Spinner />
   }
 
@@ -37,13 +37,8 @@ const Todos = () => {
       {todos.map((item) => (
         <FadeInUp key={item.id} ref={ref}>
           <Card className="cursor-pointer hover:shadow-md">
-            <CardHeader className="flex flex-row items-start justify-start gap-3">
-              <Avatar onClick={() => handleRouteTodoUser(item.id)}>
-                <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
-                <AvatarFallback>{getInitials('')}</AvatarFallback>
-              </Avatar>
-
-              <p className="font-semibold">name surname</p>
+            <CardHeader>
+              <User userId={item.userId} onClick={() => handleRouteTodoUser(item.id)} />
             </CardHeader>
 
             <CardContent className="flex items-center justify-between">

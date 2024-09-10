@@ -41,11 +41,12 @@ export default {
   garden: 'Garden',
   birthday: 'Birthday',
   address: 'Address',
-  cards: 'Cards',
+  cards: 'Carts',
   todo: {
     create: 'Create todo',
   },
   more: 'more',
   less: 'less',
   seeMore: 'See more',
+  logout: 'Logout',
 } as const

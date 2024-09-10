@@ -27,6 +27,8 @@ const formSchema = z
     password: true,
   })
 
+const TIMEOUT = 1440
+
 const Form = () => {
   const t = useI18n()
   const router = useRouter()
@@ -47,7 +49,7 @@ const Form = () => {
     const requestParams: LoginParams = {
       username: formData.username,
       password: formData.password,
-      expiresInMins: 60,
+      expiresInMins: TIMEOUT,
     }
 
     login(requestParams, {

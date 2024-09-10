@@ -1,1 +1,1 @@
-export { setUserCredentialsTokens } from './cookie'
+export { logout, setUserCredentialsTokens } from './cookie'

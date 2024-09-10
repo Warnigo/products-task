@@ -5,7 +5,7 @@ export interface Todo {
   userId: number
 }
 
-export interface Response<T> {
+export interface TodosResponse<T> {
   todos: T
   total: number
   skip: number
