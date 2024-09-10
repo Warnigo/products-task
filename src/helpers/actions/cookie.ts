@@ -15,6 +15,6 @@ export const setUserCredentialsTokens = async (authResponse: UserCredentials) =>
     httpOnly: true,
     secure: IS_PROD,
     sameSite: 'strict',
-    maxAge: 60 * 60 * 1,
+    maxAge: 60 * 60 * 5,
   })
 }

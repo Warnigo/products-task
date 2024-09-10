@@ -42,4 +42,10 @@ export default {
   birthday: 'Birthday',
   address: 'Address',
   cards: 'Cards',
+  todo: {
+    create: 'Create todo',
+  },
+  more: 'more',
+  less: 'less',
+  seeMore: 'See more',
 } as const

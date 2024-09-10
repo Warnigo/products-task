@@ -8,9 +8,9 @@ interface IntersectionObserverOptions {
 
 export const useIntersectionObserver = (
   options: IntersectionObserverOptions = {},
-): [RefObject<HTMLElement>, boolean] => {
+): [RefObject<HTMLDivElement>, boolean] => {
   const [isVisible, setIsVisible] = useState<boolean>(false)
-  const ref = useRef<HTMLElement>(null)
+  const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {

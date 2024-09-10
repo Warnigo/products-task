@@ -11,6 +11,8 @@ export const PROTECTED_ROUTES = {
   products: '/products',
   users: '/users',
   cards: '/cards',
+  createTodo: '/new',
+  singleTodo: '/todo/:id',
 }
 
 export const PUBLIC_ROUTES_VALUES = Object.values(PUBLIC_ROUTES)

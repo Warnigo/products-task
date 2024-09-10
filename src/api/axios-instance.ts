@@ -13,6 +13,10 @@ import { Methods } from '@/types'
 
 const TIME_OUT = 30_000
 
+interface CustomAxiosRequestConfig extends AxiosRequestConfig {
+  useAuth?: boolean
+}
+
 class AxiosService {
   private instance: AxiosInstance
 
@@ -27,11 +31,15 @@ class AxiosService {
   }
 
   private handleRequest = (config: InternalAxiosRequestConfig): InternalAxiosRequestConfig => {
-    const userCredentials = getUserCredentials()
-    const accessToken = userCredentials?.token
+    const customConfig = config as CustomAxiosRequestConfig
 
-    if (accessToken) {
-      config.headers.Authorization = `Bearer ${accessToken}`
+    if (customConfig.useAuth !== false) {
+      const userCredentials = getUserCredentials()
+      const accessToken = userCredentials?.token
+
+      if (accessToken) {
+        config.headers.Authorization = `Bearer ${accessToken}`
+      }
     }
 
     return config
@@ -55,29 +63,41 @@ class AxiosService {
     throw error
   }
 
-  public async request<T = any>(config: AxiosRequestConfig): Promise<T> {
+  public async request<T = any>(config: CustomAxiosRequestConfig): Promise<T> {
     const response = await this.instance.request<T>(config)
 
     return response.data
   }
 
-  public async get<T = any>(url: string, config?: AxiosRequestConfig): Promise<T> {
+  public async get<T = any>(url: string, config?: CustomAxiosRequestConfig): Promise<T> {
     return this.request<T>({ ...config, method: Methods.GET, url })
   }
 
-  public async post<T = any>(url: string, data?: any, config?: AxiosRequestConfig): Promise<T> {
+  public async post<T = any>(
+    url: string,
+    data?: any,
+    config?: CustomAxiosRequestConfig,
+  ): Promise<T> {
     return this.request<T>({ ...config, method: Methods.POST, url, data })
   }
 
-  public async put<T = any>(url: string, data?: any, config?: AxiosRequestConfig): Promise<T> {
+  public async put<T = any>(
+    url: string,
+    data?: any,
+    config?: CustomAxiosRequestConfig,
+  ): Promise<T> {
     return this.request<T>({ ...config, method: Methods.PUT, url, data })
   }
 
-  public async delete<T = any>(url: string, config?: AxiosRequestConfig): Promise<T> {
+  public async delete<T = any>(url: string, config?: CustomAxiosRequestConfig): Promise<T> {
     return this.request<T>({ ...config, method: Methods.DELETE, url })
   }
 
-  public async patch<T = any>(url: string, data?: any, config?: AxiosRequestConfig): Promise<T> {
+  public async patch<T = any>(
+    url: string,
+    data?: any,
+    config?: CustomAxiosRequestConfig,
+  ): Promise<T> {
     return this.request<T>({ ...config, method: Methods.PATCH, url, data })
   }
 }

@@ -4,4 +4,8 @@ export const enum endpoints {
 
   user = '/user',
   me = `${user}/me`,
+
+  todos = '/todos',
+  todoId = `${todos}/:id`,
+  todoAdd = `${todos}/add`,
 }
