@@ -1,4 +1,5 @@
 import { PropsWithChildren } from 'react'
+import { PublicLayout } from '@/layouts'
 import { I18nProviderClient } from '@/locales/client'
 
 interface Props extends PropsWithChildren {
@@ -7,6 +8,10 @@ interface Props extends PropsWithChildren {
   }
 }
 
-export default function PublicLayout({ children, params }: Props) {
-  return <I18nProviderClient locale={params.locale}>{children}</I18nProviderClient>
+export default function Layout({ children, params }: Props) {
+  return (
+    <PublicLayout>
+      <I18nProviderClient locale={params.locale}>{children}</I18nProviderClient>
+    </PublicLayout>
+  )
 }

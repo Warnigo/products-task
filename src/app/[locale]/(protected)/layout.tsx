@@ -1,6 +1,17 @@
 import { PropsWithChildren } from 'react'
-import { Layout } from '@/layouts'
+import { ProtectedLayout } from '@/layouts'
+import { I18nProviderClient } from '@/locales/client'
 
-export default function ProtectedLayout({ children }: PropsWithChildren) {
-  return <Layout>{children}</Layout>
+interface Props extends PropsWithChildren {
+  params: {
+    locale: string
+  }
+}
+
+export default function Layout({ children, params }: Props) {
+  return (
+    <ProtectedLayout>
+      <I18nProviderClient locale={params.locale}>{children}</I18nProviderClient>
+    </ProtectedLayout>
+  )
 }

@@ -1,1 +1,2 @@
-export { Layout } from './Layout'
+export { ProtectedLayout } from './Protected'
+export { PublicLayout } from './Public'

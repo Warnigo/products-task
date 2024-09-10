@@ -1,7 +1,7 @@
 'use client'
 
 import { Logo } from '@/components'
-import { SwitcherLanguages, SwitcherTheme } from '@/layouts/Header'
+import { SwitcherLanguages, SwitcherTheme } from '@/layouts/Protected/Header'
 import { AnimatedWrapper, FadeInUp } from '@/shared/motion'
 import { Form } from './Form'
 
