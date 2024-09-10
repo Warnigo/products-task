@@ -5,6 +5,13 @@ export enum Gender {
   FEMALE = 'female',
 }
 
+type UserAddress = {
+  address: string
+  city: string
+  state: string
+  country: string
+}
+
 export interface UserInfo {
   id: number
   userName: string
@@ -13,6 +20,10 @@ export interface UserInfo {
   lastName: string
   gender: Gender
   image: string
+  age: number
+  phone: number
+  birthDate: number
+  address: UserAddress
 }
 
 export type UserCredentials = Tokens & UserInfo

@@ -6,7 +6,7 @@ import { cn } from '@/lib'
 import { Button, buttonVariants } from '../ui'
 
 interface Props extends PropsWithChildren {
-  role: string
+  role?: string
   className?: string
   buttonVariant?: string
   roleIcon?: ReactElement
@@ -16,7 +16,9 @@ interface Props extends PropsWithChildren {
 
 export const AnimateButton: FC<Props> = memo(
   ({ role, className, variant = 'default', children, roleIcon, disabled = false }) => {
-    const [hovered, setHovered] = useState('')
+    const [hovered, setHovered] = useState<string | any>('')
+
+    const shouldAnimate = role || roleIcon
 
     return (
       <motion.div
@@ -30,8 +32,8 @@ export const AnimateButton: FC<Props> = memo(
             <motion.div
               onMouseEnter={() => !disabled && setHovered(role)}
               onMouseLeave={() => setHovered('')}
-              whileHover={!disabled ? { scale: 1.03 } : undefined}
-              whileTap={!disabled ? { scale: 0.95 } : undefined}
+              whileHover={!disabled && shouldAnimate ? { scale: 1.03 } : undefined}
+              whileTap={!disabled && shouldAnimate ? { scale: 0.95 } : undefined}
               className="w-full"
             >
               <Button
@@ -45,22 +47,24 @@ export const AnimateButton: FC<Props> = memo(
               >
                 <motion.span
                   initial={{ y: 0 }}
-                  animate={{ y: hovered === role ? -30 : 0 }}
+                  animate={{ y: shouldAnimate && hovered === role ? -30 : 0 }}
                   transition={{ duration: 0.3 }}
                   className={cn(className)}
                 >
                   {children}
                 </motion.span>
 
-                <motion.span
-                  className={cn('absolute inset-0 flex items-center justify-center gap-2')}
-                  initial={{ y: 30 }}
-                  animate={{ y: hovered === role ? 0 : 30 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  {roleIcon ? roleIcon : null}
-                  {role}
-                </motion.span>
+                {shouldAnimate && (
+                  <motion.span
+                    className={cn('absolute inset-0 flex items-center justify-center gap-2')}
+                    initial={{ y: 30 }}
+                    animate={{ y: hovered === role ? 0 : 30 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {roleIcon ? roleIcon : null}
+                    {role}
+                  </motion.span>
+                )}
               </Button>
             </motion.div>
           </AnimatePresence>

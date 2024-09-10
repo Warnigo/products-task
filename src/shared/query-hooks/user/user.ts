@@ -5,7 +5,7 @@ import { queryKeys } from '../query-keys'
 export const useGetUser = () => {
   const { data, isLoading } = useQuery({
     queryKey: [queryKeys.userMe],
-    queryFn: () => getUser(),
+    queryFn: getUser,
   })
 
   return { data, isLoading }

@@ -36,4 +36,10 @@ export default {
     posts: 'Posts',
     todos: 'Todos',
   },
+  name: 'Name',
+  phoneNumber: 'Phone number',
+  garden: 'Garden',
+  birthday: 'Birthday',
+  address: 'Address',
+  cards: 'Cards',
 } as const
