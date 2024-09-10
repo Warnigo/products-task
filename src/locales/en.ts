@@ -30,7 +30,9 @@ export default {
   },
   layout: {
     home: 'Home',
-    about: 'About',
-    contact: 'Contact',
+    products: 'Products',
+    users: 'Users',
+    posts: 'Posts',
+    todos: 'Todos',
   },
 } as const

@@ -7,6 +7,10 @@ export const PUBLIC_ROUTES = {
 export const PROTECTED_ROUTES = {
   home: '/',
   profile: '/me',
+  posts: '/prosts',
+  products: '/products',
+  users: '/users',
+  todos: '/todos',
 }
 
 export const PUBLIC_ROUTES_VALUES = Object.values(PUBLIC_ROUTES)

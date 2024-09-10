@@ -1,6 +1,6 @@
 import { setUserCredentialsTokens } from '@/helpers/actions'
 import { LoginParams, UserCredentials } from '@/types'
-import { axiosInstance } from '../axios-insance'
+import { axiosInstance } from '../axios-instance'
 import { endpoints } from '../endpoints'
 
 export const postLogin = async (credentials: LoginParams): Promise<UserCredentials> => {

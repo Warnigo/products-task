@@ -11,8 +11,9 @@ import { AnimatedContainer, AnimatedMenuItem, AnimatedWrapper } from '@/shared/m
 import { menu } from './constants'
 import { SwitcherLanguages } from './SwitcherLanguages'
 import { SwitcherTheme } from './SwitcherTheme'
+import { UserMenu } from './UserMenu'
 
-type TranslationKey = 'layout.home' | 'layout.about' | 'layout.contact'
+type TranslationKey = 'layout.home' | 'layout.products' | 'layout.users' | 'layout.posts'
 
 const Header = () => {
   const pathname = usePathname()
@@ -51,6 +52,10 @@ const Header = () => {
 
           <AnimatedWrapper>
             <SwitcherLanguages />
+          </AnimatedWrapper>
+
+          <AnimatedWrapper>
+            <UserMenu />
           </AnimatedWrapper>
         </div>
       </div>

@@ -6,12 +6,16 @@ export const menu = [
     link: ROUTES.home,
   },
   {
-    title: 'layout.about',
-    link: ROUTES.home,
+    title: 'layout.products',
+    link: ROUTES.products,
   },
   {
-    title: 'layout.contact',
-    link: ROUTES.home,
+    title: 'layout.users',
+    link: ROUTES.users,
+  },
+  {
+    title: 'layout.posts',
+    link: ROUTES.posts,
   },
 ] as const
 

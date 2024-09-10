@@ -1,5 +1,7 @@
 export const enum endpoints {
   auth = '/auth',
   login = '/login',
-  profile = '/me',
+
+  user = '/user',
+  me = `${user}/me`,
 }
