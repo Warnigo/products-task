@@ -18,5 +18,6 @@ export interface Comment {
 
 export interface CommentRequest {
   body: string
+  title: string
   userId: number
 }

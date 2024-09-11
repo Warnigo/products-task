@@ -64,4 +64,12 @@ export default {
   notFoundUsers: 'Not found users',
   search: 'Search',
   searchNotFound: 'Search not found!!',
+  comments: 'Comments',
+  noComments: 'No comments',
+  post: 'Post',
+  createPost: 'Create Post',
+  postAbout: 'Post about...',
+  postTitle: 'Post title...',
+  about: 'About',
+  title: 'Title',
 } as const

@@ -26,7 +26,7 @@ export const AnimateButton: FC<Props> = memo(
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.3, delay: 0.1 }}
-        className="w-full text-center"
+        className="w-auto text-center"
       >
         <div className="flex w-full items-center justify-center">
           <AnimatePresence>

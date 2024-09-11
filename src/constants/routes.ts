@@ -9,6 +9,7 @@ export const PROTECTED_ROUTES = {
   profile: '/me',
   posts: '/posts',
   postSingle: '/posts/:id',
+  postCreate: '/posts/add',
   usersSingle: '/users/:id',
   cards: '/cards',
   createTodo: '/new',

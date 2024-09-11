@@ -12,16 +12,18 @@ import { useI18n } from '@/locales/client'
 
 type Props = {
   title: string
+  backLink?: string
+  back?: string
 }
 
-const Breadcrumb: FC<Props> = memo(({ title }: Props) => {
+const Breadcrumb: FC<Props> = memo(({ title, backLink, back }: Props) => {
   const t = useI18n()
 
   return (
     <ComponentBreadcrumb className="my-2 mb-4">
       <BreadcrumbList>
         <BreadcrumbItem>
-          <BreadcrumbLink href={ROUTES.home}>{t('layout.home')}</BreadcrumbLink>
+          <BreadcrumbLink href={backLink || ROUTES.home}>{back || t('layout.home')}</BreadcrumbLink>
         </BreadcrumbItem>
 
         <BreadcrumbSeparator />
