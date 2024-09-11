@@ -10,6 +10,7 @@ export const PROTECTED_ROUTES = {
   posts: '/prosts',
   products: '/products',
   users: '/users',
+  usersSingle: '/users/:id',
   cards: '/cards',
   createTodo: '/new',
   singleTodo: '/todo/:id',

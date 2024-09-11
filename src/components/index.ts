@@ -1,4 +1,5 @@
 export { AnimateButton } from './AnimateButton'
+export { Breadcrumb } from './Breadcrumb'
 export { Icons } from './Icons'
 export { Logo } from './Logo'
 export { Spinner } from './Spinner'

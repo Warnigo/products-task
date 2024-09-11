@@ -2,10 +2,8 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { ShoppingBag } from 'lucide-react'
-import { AnimateButton, Logo } from '@/components'
+import { Logo } from '@/components'
 import { Separator } from '@/components/ui'
-import { ROUTES } from '@/constants'
 import { useHeaderScroll } from '@/helpers/hooks'
 import { getStripLocale } from '@/helpers/utils'
 import { cn } from '@/lib'
@@ -58,12 +56,6 @@ const Header = () => {
           </AnimatedWrapper>
 
           <Separator orientation="vertical" className="h-8" />
-
-          <AnimatedWrapper>
-            <AnimateButton roleIcon={<ShoppingBag className="size-5" />}>
-              <Link href={ROUTES.cards}>{t('cards')}</Link>
-            </AnimateButton>
-          </AnimatedWrapper>
 
           <AnimatedWrapper>
             <UserMenu />

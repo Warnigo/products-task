@@ -1,6 +1,12 @@
 import { useQuery } from '@tanstack/react-query'
-import { getUser } from '@/api'
-import { getSearchUser, getSingleUser, getUserCarts, getUserPosts, getUserTodos } from '@/api/users'
+import {
+  getSearchUser,
+  getSingleUser,
+  getUser,
+  getUserCarts,
+  getUserPosts,
+  getUserTodos,
+} from '@/api'
 import { queryKeys } from '../query-keys'
 
 export const useGetUsers = () => {
@@ -13,12 +19,15 @@ export const useGetUsers = () => {
 }
 
 export const useGetUserSingle = (userId: number) => {
-  const { data, isLoading } = useQuery({
+  const { data, isLoading, refetch } = useQuery({
     queryKey: [queryKeys.userSingle(userId)],
     queryFn: () => getSingleUser(userId),
+    staleTime: 5 * 60 * 1000,
+    retry: 3,
+    retryDelay: 1000,
   })
 
-  return { data, isLoading }
+  return { data, isLoading, refetch }
 }
 
 export const useGetUserSearch = (username: string) => {

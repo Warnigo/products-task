@@ -2,6 +2,7 @@ export const queryKeys = {
   login: 'login',
   userMe: 'user-me',
   todos: 'todos',
+  todoRandom: 'todo-random',
   todoAdd: 'todoAdd',
   todoSingle: 'todoSingle',
   todoDelete: 'todoDelete',

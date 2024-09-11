@@ -12,10 +12,11 @@ interface Props extends PropsWithChildren {
   roleIcon?: ReactElement
   variant?: 'default' | 'outline'
   disabled?: boolean
+  type?: 'submit'
 }
 
 export const AnimateButton: FC<Props> = memo(
-  ({ role, className, variant = 'default', children, roleIcon, disabled = false }) => {
+  ({ role, className, variant = 'default', children, roleIcon, type, disabled = false }) => {
     const [hovered, setHovered] = useState<string | any>('')
 
     const shouldAnimate = role || roleIcon
@@ -44,6 +45,7 @@ export const AnimateButton: FC<Props> = memo(
                   disabled && 'cursor-not-allowed opacity-50',
                 )}
                 disabled={disabled}
+                type={type}
               >
                 <motion.span
                   initial={{ y: 0 }}

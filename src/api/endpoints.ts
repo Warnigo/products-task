@@ -8,6 +8,7 @@ export const enum endpoints {
   todos = '/todos',
   todoId = `${todos}/:id`,
   todoAdd = `${todos}/add`,
+  todoRandom = `${todos}/random/10`,
 
   users = '/users',
   userId = `${users}/:id`,

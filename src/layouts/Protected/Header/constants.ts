@@ -14,6 +14,10 @@ export const menu = [
     link: ROUTES.users,
   },
   {
+    title: 'carts',
+    link: ROUTES.cards,
+  },
+  {
     title: 'layout.posts',
     link: ROUTES.posts,
   },

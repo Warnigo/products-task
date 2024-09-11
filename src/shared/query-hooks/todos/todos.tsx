@@ -1,5 +1,12 @@
 import { useMutation, useQuery } from '@tanstack/react-query'
-import { deleteTodo, deleteTodoProps, getSingleTodo, getTodos, postAddTodo } from '@/api'
+import {
+  deleteTodo,
+  deleteTodoProps,
+  getSingleTodo,
+  getTodoRandom,
+  getTodos,
+  postAddTodo,
+} from '@/api'
 import { TodoAddParams } from '@/types'
 import { queryKeys } from '../query-keys'
 
@@ -12,22 +19,34 @@ export const useGetTodos = () => {
   return { data, isLoading }
 }
 
-export const useGetSingleTodo = (todoId: number) => {
+export const useGetTodoRandom = () => {
   const { data, isLoading } = useQuery({
-    queryKey: [queryKeys.todos],
-    queryFn: () => getSingleTodo(todoId),
+    queryKey: [queryKeys.todoRandom],
+    queryFn: getTodoRandom,
   })
 
   return { data, isLoading }
 }
 
+export const useGetSingleTodo = (todoId: number) => {
+  const { data, isLoading, error, refetch } = useQuery({
+    queryKey: [queryKeys.todos],
+    queryFn: () => getSingleTodo(todoId),
+    staleTime: 5 * 60 * 1000,
+    retry: 3,
+    retryDelay: 1000,
+  })
+
+  return { data, isLoading, error, refetch }
+}
+
 export const usePostAddTodo = () => {
-  const { data, isPending } = useMutation({
+  const { mutate, isPending } = useMutation({
     mutationKey: [queryKeys.todoAdd],
     mutationFn: (todoAddParams: TodoAddParams) => postAddTodo(todoAddParams),
   })
 
-  return { data, isPending }
+  return { mutate, isPending }
 }
 
 export const useDeleteTodo = () => {

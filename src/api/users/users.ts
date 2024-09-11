@@ -11,75 +11,74 @@ import {
 import { axiosInstance } from '../axios-instance'
 import { endpoints } from '../endpoints'
 
-export const getUsers = async () => {
+const handleApiError = (error: unknown) => {
+  console.error('API error:', error)
+  throw error
+}
+
+export const getUsers = async (): Promise<UsersResponse<Users[]>> => {
   try {
-    const response = await axiosInstance.get<UsersResponse<Users[]>>(endpoints.users, {
+    const data = await axiosInstance.get<UsersResponse<Users[]>>(endpoints.users, {
       useAuth: false,
     })
 
-    return response
+    return data
   } catch (error) {
-    console.error(error)
-    throw error
+    return handleApiError(error)
   }
 }
 
-export const getSingleUser = async (userId: number) => {
+export const getSingleUser = async (userId: number): Promise<Users> => {
   try {
     const url = endpoints.userId.replace(':id', String(userId))
-    const response = await axiosInstance.get<Users>(url, { useAuth: false })
+    const data = await axiosInstance.get<Users>(url, { useAuth: false })
 
-    return response
+    return data
   } catch (error) {
-    console.error(error)
-    throw error
+    return handleApiError(error)
   }
 }
 
-export const getSearchUser = async (username: string) => {
+export const getSearchUser = async (username: string): Promise<UsersResponse<Users[]>> => {
   try {
-    const url = endpoints.userSearch.replace(':name', String(username))
-    const response = await axiosInstance.get<UsersResponse<Users[]>>(url, { useAuth: false })
+    const url = endpoints.userSearch.replace(':name', username)
+    const data = await axiosInstance.get<UsersResponse<Users[]>>(url, { useAuth: false })
 
-    return response
+    return data
   } catch (error) {
-    console.error(error)
-    throw error
+    return handleApiError(error)
   }
 }
 
-export const getUserCarts = async (userId: number) => {
+export const getUserCarts = async (userId: number): Promise<CartsResponse<Cart[]>> => {
   try {
     const url = endpoints.userIdCarts.replace(':id', String(userId))
-    const response = await axiosInstance.get<CartsResponse<Cart[]>>(url, { useAuth: false })
+    const data = await axiosInstance.get<CartsResponse<Cart[]>>(url, { useAuth: false })
 
-    return response
+    return data
   } catch (error) {
-    console.error(error)
-    throw error
+    return handleApiError(error)
   }
 }
 
-export const getUserPosts = async (userId: number) => {
+export const getUserPosts = async (userId: number): Promise<PostsResponse<Post[]>> => {
   try {
     const url = endpoints.userIdPosts.replace(':id', String(userId))
-    const response = await axiosInstance.get<PostsResponse<Post[]>>(url, { useAuth: false })
+    const data = await axiosInstance.get<PostsResponse<Post[]>>(url, { useAuth: false })
 
-    return response
+    return data
   } catch (error) {
-    console.error(error)
-    throw error
+    return handleApiError(error)
   }
 }
 
-export const getUserTodos = async (userId: number) => {
+export const getUserTodos = async (userId: number): Promise<TodosResponse<Todo[]>> => {
   try {
     const url = endpoints.userIdTodos.replace(':id', String(userId))
-    const response = await axiosInstance.get<TodosResponse<Todo[]>>(url, { useAuth: false })
+    const data = await axiosInstance.get<TodosResponse<Todo[]>>(url, { useAuth: false })
 
-    return response
+    return data
   } catch (error) {
-    console.error(error)
-    throw error
+    return handleApiError(error)
   }
 }

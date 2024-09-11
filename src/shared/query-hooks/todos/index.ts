@@ -1,1 +1,7 @@
-export { useDeleteTodo, useGetSingleTodo, useGetTodos, usePostAddTodo } from './todos'
+export {
+  useDeleteTodo,
+  useGetSingleTodo,
+  useGetTodoRandom,
+  useGetTodos,
+  usePostAddTodo,
+} from './todos'

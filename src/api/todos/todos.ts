@@ -18,7 +18,18 @@ export const getTodos = async () => {
   }
 }
 
-export const getSingleTodo = async (todoId: number) => {
+export const getTodoRandom = async () => {
+  try {
+    const data = await axiosInstance.get<Todo[]>(endpoints.todoRandom, { useAuth: false })
+
+    return data
+  } catch (error) {
+    console.error(error)
+    throw error
+  }
+}
+
+export const getSingleTodo = async (todoId: number): Promise<Todo> => {
   try {
     const url = endpoints.todoId.replace(':id', String(todoId))
     const data = await axiosInstance.get<Todo>(url, { useAuth: false })

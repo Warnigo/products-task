@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
 import { ChevronRight } from 'lucide-react'
 import { AnimateButton, Spinner, TruncateText } from '@/components'
 import { Card, CardContent, CardHeader } from '@/components/ui'
@@ -10,19 +9,14 @@ import { useIntersectionObserver } from '@/helpers/hooks'
 import { useI18n } from '@/locales/client'
 import { FadeInUp } from '@/shared/motion'
 import { useGetTodos } from '@/shared/query-hooks'
-import User from './User'
+import { User } from '../User'
 
 const Todos = () => {
   const t = useI18n()
   const { data: todosData, isLoading: isTodosLoading } = useGetTodos()
-  const router = useRouter()
   const [ref] = useIntersectionObserver({ threshold: 0.5 })
 
   const todos = todosData?.todos
-
-  const handleRouteTodoUser = (todoId: number) => {
-    router.push(ROUTES.singleTodo.replace(':id', String(todoId)))
-  }
 
   if (!todos) {
     return null
@@ -38,7 +32,7 @@ const Todos = () => {
         <FadeInUp key={item.id} ref={ref}>
           <Card className="cursor-pointer hover:shadow-md">
             <CardHeader>
-              <User userId={item.userId} onClick={() => handleRouteTodoUser(item.id)} />
+              <User userId={item.userId} />
             </CardHeader>
 
             <CardContent className="flex items-center justify-between">
