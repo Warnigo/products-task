@@ -29,17 +29,15 @@ export const useGetTodoRandom = () => {
   return { data, isLoading }
 }
 
-export const useGetSingleTodo = (todoId: number) => {
-  const { data, isLoading, error, refetch } = useQuery({
-    queryKey: [queryKeys.todos],
+export const useGetSingleTodo = (todoId: string) =>
+  useQuery({
+    queryKey: [queryKeys.todos, todoId],
     queryFn: () => getSingleTodo(todoId),
+    enabled: !!todoId,
     staleTime: 5 * 60 * 1000,
     retry: 3,
     retryDelay: 1000,
   })
-
-  return { data, isLoading, error, refetch }
-}
 
 export const usePostAddTodo = () => {
   const { mutate, isPending } = useMutation({

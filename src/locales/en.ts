@@ -61,4 +61,5 @@ export default {
   emptyCarts: 'Empty Carts',
   emptyPosts: 'Empty Carts',
   emptyTodos: 'Empty Carts',
+  notFoundUsers: 'Not found users',
 } as const

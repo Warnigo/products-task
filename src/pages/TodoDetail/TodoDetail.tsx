@@ -12,18 +12,28 @@ interface Props {
 }
 
 const TodoDetail: FC<Props> = ({ todoId }) => {
-  const { data, isLoading } = useGetSingleTodo(Number(todoId))
+  const { data, isLoading, error } = useGetSingleTodo(todoId)
 
-  if (isLoading || !data) {
+  if (isLoading) {
     return <Spinner />
+  }
+
+  if (error) {
+    return <div>Error: {(error as Error).message}</div>
+  }
+
+  if (!data) {
+    return <div>No data available</div>
   }
 
   return (
     <div className="h-full py-10">
       <Breadcrumb title={data.todo} />
       <h1 className="text-4xl font-black">{data.todo}</h1>
+
       <Separator className="my-4" />
-      <Todo data={data} />
+      <Todo data={data} hideButton />
+
       <Separator className="my-4 mb-10" />
       <TodoRandom />
     </div>

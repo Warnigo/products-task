@@ -29,14 +29,17 @@ export const getTodoRandom = async () => {
   }
 }
 
-export const getSingleTodo = async (todoId: number): Promise<Todo> => {
+export const getSingleTodo = async (todoId: string): Promise<Todo> => {
+  if (!todoId) {
+    throw new Error('Todo ID is required')
+  }
   try {
-    const url = endpoints.todoId.replace(':id', String(todoId))
-    const data = await axiosInstance.get<Todo>(url, { useAuth: false })
+    const url = endpoints.todoId.replace(':id', todoId)
+    const response = await axiosInstance.get<Todo>(url, { useAuth: false })
 
-    return data
+    return response
   } catch (error) {
-    console.error(error)
+    console.error('Error fetching todo:', error)
     throw error
   }
 }

@@ -14,7 +14,7 @@ import { SwitcherLanguages } from './SwitcherLanguages'
 import { SwitcherTheme } from './SwitcherTheme'
 import { UserMenu } from './UserMenu'
 
-type TranslationKey = 'layout.home' | 'layout.products' | 'layout.users' | 'layout.posts'
+type TranslationKey = 'layout.todos' | 'layout.users' | 'layout.posts' | 'carts'
 
 const Header = () => {
   const pathname = usePathname()

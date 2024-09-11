@@ -6,10 +6,6 @@ export const menu = [
     link: ROUTES.home,
   },
   {
-    title: 'layout.products',
-    link: ROUTES.products,
-  },
-  {
     title: 'layout.users',
     link: ROUTES.users,
   },

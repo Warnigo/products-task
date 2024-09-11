@@ -5,7 +5,7 @@ import { ThumbsDown, ThumbsUp } from 'lucide-react'
 import { TruncateText } from '@/components'
 import { Badge, Card, CardContent, CardHeader, Separator } from '@/components/ui'
 import { Post as PostType } from '@/types'
-import { User } from '../User'
+import { Owner } from '../Owner'
 
 type Props = {
   data: PostType
@@ -14,7 +14,7 @@ type Props = {
 const Post: FC<Props> = ({ data }) => (
   <Card className="rounded-lg border bg-background">
     <CardHeader>
-      <User userId={data.userId} />
+      <Owner userId={data.userId} />
     </CardHeader>
 
     <CardContent className="flex flex-col gap-3">
