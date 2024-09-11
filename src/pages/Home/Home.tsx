@@ -5,7 +5,6 @@ import { CirclePlus } from 'lucide-react'
 import { AnimateButton, Spinner } from '@/components'
 import { Separator } from '@/components/ui'
 import { ROUTES } from '@/constants'
-import { useIntersectionObserver } from '@/helpers/hooks'
 import { useI18n } from '@/locales/client'
 import { useGetTodos } from '@/shared/query-hooks'
 import { Todo } from '@/widgets/Todo'
@@ -13,7 +12,6 @@ import { Todo } from '@/widgets/Todo'
 const Home = () => {
   const t = useI18n()
   const { data: todosData, isLoading: isTodosLoading } = useGetTodos()
-  const [ref] = useIntersectionObserver({ threshold: 0.5 })
 
   const todos = todosData?.todos
 
@@ -39,7 +37,7 @@ const Home = () => {
 
       <Separator className="my-4" />
 
-      <div className="grid grid-cols-2 gap-3" ref={ref}>
+      <div className="grid grid-cols-2 gap-3">
         {todos.map((item) => (
           <Todo key={item.id} data={item} />
         ))}

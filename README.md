@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://github.com/Warnigo/Products" target="_blank" style="background-color: #fff; display: inline-block; padding: 10px;">
-    <img src="public/logo.svg" width="200" alt="Webfolio logo" />
+    <img src="public/logo.svg" alt='logo' width="200" alt="Webfolio logo" />
   </a>
 
   <h1>Abubakir Shavkatov's task</h1>
@@ -116,17 +116,3 @@ Root
 3. Styles are always in tailwindcss
 4. Interfaces in types.ts
 5. constants in constants.tsx
-
-## Code Review
-
-    1) If the code is not ready, then mark your PR as “Draft” with the “Mark as draft” button
-    2) Considers Architectural, Structural and other agreements on the design of PR to be critical and for this is not passed further than PR
-    3) The remaining comments are purely advisory in nature and are not a blocker for PR
-    4) Any controversial issue is discussed by the team and if there is no violation of points 1-2, then this dispute is not blocked!
-
-## ☝️ - IMPORTANT:
-
-> - To type everything and anything that is possible is not to use ANY!
-> - any enemy! - always discuss exceptions with the team!
-> - avoid console.log if possible, in extreme cases console.error console.warn
-> - mutate values ​​outside the mobx store (use exclusively actions from the mobx store for such things.)

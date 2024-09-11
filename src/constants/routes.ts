@@ -12,7 +12,7 @@ export const PROTECTED_ROUTES = {
   postCreate: '/posts/add',
   usersSingle: '/users/:id',
   cards: '/cards',
-  createTodo: '/new',
+  createTodo: '/todo/add',
   singleTodo: '/todo/:id',
 }
 

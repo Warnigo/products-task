@@ -16,7 +16,9 @@ const Profile = () => {
   }
 
   return (
-    <div className="flex h-full flex-col items-center justify-center gap-5 py-10">
+    <div className="flex h-full flex-col gap-5 py-10">
+      <h2 className="text-4xl font-black">{t('profile')}</h2>
+
       <div className="flex items-center justify-start gap-8 rounded-lg border bg-background p-10">
         <Avatar className="size-40 rounded-full border-2">
           <AvatarImage
