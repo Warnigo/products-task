@@ -56,4 +56,9 @@ export default {
   notCompleted: 'Not completed',
   create: 'Create',
   done: 'Done',
+  total: 'Total',
+  discountedTotal: 'Discounted total',
+  emptyCarts: 'Empty Carts',
+  emptyPosts: 'Empty Carts',
+  emptyTodos: 'Empty Carts',
 } as const

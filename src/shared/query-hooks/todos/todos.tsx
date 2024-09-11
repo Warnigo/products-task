@@ -14,6 +14,7 @@ export const useGetTodos = () => {
   const { data, isLoading } = useQuery({
     queryKey: [queryKeys.todos],
     queryFn: getTodos,
+    staleTime: 60 * 60 * 1,
   })
 
   return { data, isLoading }

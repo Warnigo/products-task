@@ -1,7 +1,7 @@
 import { Spinner } from '@/components'
 import { useI18n } from '@/locales/client'
 import { useGetTodoRandom } from '@/shared/query-hooks'
-import { TodoCard } from '@/widgets/TodoCard'
+import { Todo } from '@/widgets/Todo'
 
 const TodoRandom = () => {
   const t = useI18n()
@@ -17,7 +17,7 @@ const TodoRandom = () => {
 
       <div className="grid grid-cols-2 gap-3">
         {data.map((item) => (
-          <TodoCard key={item.id} data={item} />
+          <Todo key={item.id} data={item} />
         ))}
       </div>
     </div>

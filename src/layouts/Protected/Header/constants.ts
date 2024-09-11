@@ -2,7 +2,7 @@ import { ROUTES } from '@/constants'
 
 export const menu = [
   {
-    title: 'layout.home',
+    title: 'layout.todos',
     link: ROUTES.home,
   },
   {

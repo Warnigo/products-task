@@ -5,6 +5,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui'
 import { getInitials } from '@/helpers/utils'
 import { useI18n } from '@/locales/client'
 import { useGetUser } from '@/shared/query-hooks'
+import { ProfileTab } from './Tab'
 
 const Profile = () => {
   const t = useI18n()
@@ -15,8 +16,8 @@ const Profile = () => {
   }
 
   return (
-    <div className="flex h-full max-h-full items-center justify-center py-10">
-      <div className="flex items-center justify-start gap-8 rounded-lg border p-10">
+    <div className="flex h-full flex-col items-center justify-center gap-5 py-10">
+      <div className="flex items-center justify-start gap-8 rounded-lg border bg-background p-10">
         <Avatar className="size-40 rounded-full border-2">
           <AvatarImage
             src={data.image}
@@ -58,6 +59,8 @@ const Profile = () => {
           </div>
         </div>
       </div>
+
+      <ProfileTab />
     </div>
   )
 }

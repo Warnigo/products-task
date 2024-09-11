@@ -1,10 +1,10 @@
 'use client'
 
-import { FC, useEffect, useState } from 'react'
+import { FC } from 'react'
 import { Breadcrumb, Spinner } from '@/components'
 import { Separator } from '@/components/ui'
 import { useGetSingleTodo } from '@/shared/query-hooks'
-import { TodoCard } from '@/widgets/TodoCard'
+import { Todo } from '@/widgets/Todo'
 import { TodoRandom } from './TodoRandom'
 
 interface Props {
@@ -12,23 +12,18 @@ interface Props {
 }
 
 const TodoDetail: FC<Props> = ({ todoId }) => {
-  const { data, isLoading, refetch } = useGetSingleTodo(Number(todoId))
+  const { data, isLoading } = useGetSingleTodo(Number(todoId))
 
-  if (isLoading) {
+  if (isLoading || !data) {
     return <Spinner />
-  }
-
-  if (data?.userId === undefined) {
-    refetch()
-    window.location.reload()
   }
 
   return (
     <div className="h-full py-10">
-      <Breadcrumb title={data?.todo || ''} />
-      <h1 className="text-4xl font-black">{data?.todo}</h1>
+      <Breadcrumb title={data.todo} />
+      <h1 className="text-4xl font-black">{data.todo}</h1>
       <Separator className="my-4" />
-      <TodoCard data={data!} />
+      <Todo data={data} />
       <Separator className="my-4 mb-10" />
       <TodoRandom />
     </div>
