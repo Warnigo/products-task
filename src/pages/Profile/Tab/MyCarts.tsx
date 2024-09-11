@@ -26,8 +26,6 @@ const MyCarts = () => {
     )
   }
 
-  console.log(todos)
-
   return (
     <div className="mt-5">
       <div className="grid grid-cols-2 gap-3">
