@@ -16,6 +16,11 @@ export const enum endpoints {
   userIdTodos = `${users}/:id/todos`,
   userIdCarts = `${users}/:id/carts`,
   userIdPosts = `${users}/:id/posts`,
-
   userAdd = `${users}/add`,
+
+  posts = '/posts',
+  postId = `${posts}/:id`,
+  postSearch = `${posts}/search?q=:name`,
+  postComments = `${postId}/comments`,
+  postAdd = `${posts}/add`,
 }

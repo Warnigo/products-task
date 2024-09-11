@@ -1,8 +1,1 @@
-export {
-  getSearchUser,
-  getSingleUser,
-  getUserCarts,
-  getUserPosts,
-  getUsers,
-  getUserTodos,
-} from './users'
+export { getSingleUser, getUserCarts, getUserPosts, getUserTodos } from './users'

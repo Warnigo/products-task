@@ -1,5 +1,13 @@
 export { usePostLogin } from './auth'
 export {
+  useDeletePost,
+  useGetAllPosts,
+  useGetSearchPost,
+  useGetSinglePost,
+  usePostAdd,
+  usePutUpdatePost,
+} from './posts'
+export {
   useDeleteTodo,
   useGetSingleTodo,
   useGetTodoRandom,
@@ -7,11 +15,4 @@ export {
   usePostAddTodo,
 } from './todos'
 export { useGetUser } from './user'
-export {
-  useGetUserCarts,
-  useGetUserPosts,
-  useGetUsers,
-  useGetUserSearch,
-  useGetUserSingle,
-  useGetUserTodos,
-} from './users'
+export { useGetUserCarts, useGetUserPosts, useGetUserSingle, useGetUserTodos } from './users'

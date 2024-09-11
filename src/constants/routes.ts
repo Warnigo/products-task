@@ -7,9 +7,8 @@ export const PUBLIC_ROUTES = {
 export const PROTECTED_ROUTES = {
   home: '/',
   profile: '/me',
-  posts: '/prosts',
-  products: '/products',
-  users: '/users',
+  posts: '/posts',
+  postSingle: '/posts/:id',
   usersSingle: '/users/:id',
   cards: '/cards',
   createTodo: '/new',

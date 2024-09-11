@@ -14,4 +14,5 @@ export interface Post {
     likes: number
     dislikes: number
   }
+  views: number
 }

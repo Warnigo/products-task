@@ -1,5 +1,15 @@
 export { postLogin } from './auth'
 export {
+  deletePost,
+  getAllPosts,
+  getPostComments,
+  getPostSearch,
+  getPostSingle,
+  postAddPost,
+  updatePost,
+  type UpdatePostProps,
+} from './posts'
+export {
   deleteTodo,
   type deleteTodoProps,
   getSingleTodo,
@@ -8,11 +18,4 @@ export {
   postAddTodo,
 } from './todos'
 export { getUser } from './user'
-export {
-  getSearchUser,
-  getSingleUser,
-  getUserCarts,
-  getUserPosts,
-  getUsers,
-  getUserTodos,
-} from './users'
+export { getSingleUser, getUserCarts, getUserPosts, getUserTodos } from './users'
