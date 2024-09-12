@@ -5,6 +5,10 @@ const nextConfig = {
   swcMinify: true,
   eslint: { dirs: ['src'] },
 
+  images: {
+    domains: ['cdn.dummyjson.com'],
+  },
+
   webpack(config) {
     const fileLoaderRule = config.module.rules.find((rule) => rule.test?.test?.('.svg'))
 

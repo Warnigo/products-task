@@ -8,6 +8,13 @@ export {
   usePutUpdatePost,
 } from './posts'
 export {
+  useGetAllProductCategory,
+  useGetAllProductCategoryName,
+  useGetAllProducts,
+  useGetProductSearch,
+  useGetProductSingle,
+} from './products'
+export {
   useDeleteTodo,
   useGetSingleTodo,
   useGetTodoRandom,

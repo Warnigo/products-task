@@ -81,4 +81,8 @@ export default {
   age: 'Age',
   height: 'Height',
   weight: 'Weight',
+  notFoundProduct: 'Not found product',
+  inStock: 'In stock',
+  outOfStock: 'Out of stock',
+  shopNow: 'Shop now',
 } as const
