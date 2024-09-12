@@ -45,10 +45,6 @@ export const Categories = ({ categoryValue, setCategoryValue }: Props) => {
     return () => clearTimeout(timer)
   }, [categoryValue, searchQuery, updateSearchParams])
 
-  const handleSearch = (value: string) => {
-    setCategoryValue(value)
-  }
-
   if (isLoading || !data) {
     return <Spinner />
   }
