@@ -85,4 +85,6 @@ export default {
   inStock: 'In stock',
   outOfStock: 'Out of stock',
   shopNow: 'Shop now',
+  product: 'Product',
+  emptyCategory: 'Empty Category item',
 } as const

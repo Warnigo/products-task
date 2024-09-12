@@ -32,9 +32,17 @@ export const getProductSingle = async (productId: string): Promise<Products> => 
   }
 }
 
-export const getProductSearch = async (search: string): Promise<ProductsResponse<Products[]>> => {
+export const getProductSearch = async (
+  search: string,
+  category: string,
+): Promise<ProductsResponse<Products[]>> => {
   try {
-    const url = endpoints.productSearch.replace(':name', search)
+    let url = endpoints.productSearch.replace(':name', search)
+
+    if (category) {
+      url += `?category=${category}`
+    }
+
     const response = await axiosInstance.get<ProductsResponse<Products[]>>(url, {
       useAuth: false,
     })

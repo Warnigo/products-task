@@ -25,11 +25,11 @@ export const useGetProductSingle = (productId: string) =>
     staleTime: STALE_TIME,
   })
 
-export const useGetProductSearch = (search: string) =>
+export const useGetProductSearch = (search: string, category: string) =>
   useQuery({
-    queryKey: [queryKeys.productSearch],
-    queryFn: () => getProductSearch(search),
-    enabled: !!search,
+    queryKey: [queryKeys.productSearch, search, category],
+    queryFn: () => getProductSearch(search, category),
+    enabled: !!search || !!category,
     staleTime: STALE_TIME,
   })
 

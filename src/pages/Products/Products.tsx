@@ -6,8 +6,13 @@ import { Search, Spinner } from '@/components'
 import { Separator } from '@/components/ui'
 import { ROUTES } from '@/constants'
 import { useI18n } from '@/locales/client'
-import { useGetAllProducts, useGetProductSearch } from '@/shared/query-hooks'
+import {
+  useGetAllProductCategoryName,
+  useGetAllProducts,
+  useGetProductSearch,
+} from '@/shared/query-hooks'
 import { Product } from '@/widgets/Product'
+import { Categories } from './Categories'
 
 const Products = () => {
   const t = useI18n()
@@ -15,11 +20,21 @@ const Products = () => {
   const searchParams = useSearchParams()
   const searchQuery = searchParams?.get('q') ?? ''
   const [searchTerm, setSearchTerm] = useState(searchQuery)
-  const { data: allProductData, isLoading: allProductLoading } = useGetAllProducts()
-  const { data: productSearchData, isLoading: productSearchLoading } =
-    useGetProductSearch(searchQuery)
+  const [categoryValue, setCategoryValue] = useState<string>('')
 
-  const products = searchQuery ? productSearchData?.products : allProductData?.products
+  const { data: allProductData, isLoading: allProductLoading } = useGetAllProducts()
+  const { data: productSearchData, isLoading: productSearchLoading } = useGetProductSearch(
+    searchTerm,
+    categoryValue,
+  )
+  const { data: categoryData, isLoading: isCategoryLoading } =
+    useGetAllProductCategoryName(categoryValue)
+
+  const products = searchTerm
+    ? productSearchData?.products
+    : categoryValue
+      ? categoryData?.products
+      : allProductData?.products
 
   const updateSearchParams = useCallback(
     (value: string) => {
@@ -30,6 +45,7 @@ const Products = () => {
       } else {
         newSearchParams.delete('q')
       }
+
       router.push(`${ROUTES.products}?${newSearchParams.toString()}`)
     },
     [router, searchParams],
@@ -49,7 +65,7 @@ const Products = () => {
     setSearchTerm(value)
   }
 
-  if (allProductLoading) {
+  if (allProductLoading || isCategoryLoading) {
     return <Spinner />
   }
 
@@ -62,11 +78,28 @@ const Products = () => {
           <Search value={searchTerm} onChange={handleSearch} />
         </div>
       </div>
-
       <Separator />
 
+      <Categories setCategoryValue={setCategoryValue} categoryValue={categoryValue} />
+
       <div>
-        {searchQuery && productSearchLoading ? (
+        {categoryValue || searchTerm ? (
+          productSearchLoading ? (
+            <div className="my-10 flex items-center justify-center">
+              <Spinner />
+            </div>
+          ) : products && products.length > 0 ? (
+            <div className="grid grid-cols-2 gap-3">
+              {products.map((item) => (
+                <Product key={item.id} data={item} />
+              ))}
+            </div>
+          ) : (
+            <div className="mt-10 flex items-center justify-center">
+              <p className="text-4xl font-black text-primary/50">{t('emptyCategory')}</p>
+            </div>
+          )
+        ) : searchQuery && productSearchLoading ? (
           <div className="my-10 flex items-center justify-center">
             <Spinner />
           </div>

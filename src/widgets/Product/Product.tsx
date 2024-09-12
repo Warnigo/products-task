@@ -66,21 +66,21 @@ const Product = ({ data, hideButton = false }: Props) => {
           </Badge>
         </div>
 
-        <div className="flex justify-between gap-2">
-          <div>
-            <AnimateButton roleIcon={<ShoppingCart className="size-5" />}>
-              {t('shopNow')}
-            </AnimateButton>
-          </div>
+        {!hideButton && (
+          <div className="flex justify-between gap-2">
+            <div>
+              <AnimateButton roleIcon={<ShoppingCart className="size-5" />}>
+                {t('shopNow')}
+              </AnimateButton>
+            </div>
 
-          {!hideButton && (
             <Link href={ROUTES.productsSingle.replace(':id', String(data.id))}>
               <AnimateButton roleIcon={<ChevronRight className="size-5" />}>
                 {t('seeMore')}
               </AnimateButton>
             </Link>
-          )}
-        </div>
+          </div>
+        )}
       </CardContent>
     </Card>
   )
