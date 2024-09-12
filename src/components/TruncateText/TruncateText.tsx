@@ -10,7 +10,7 @@ interface TruncateTextProps {
   disabled?: boolean
 }
 
-const TruncateText: FC<TruncateTextProps> = ({ text, limit = 10, disabled = false }) => {
+export const TruncateText: FC<TruncateTextProps> = ({ text, limit = 10, disabled = false }) => {
   const [isExpanded, setIsExpanded] = useState(false)
   const t = useI18n()
 
@@ -69,4 +69,3 @@ const TruncateText: FC<TruncateTextProps> = ({ text, limit = 10, disabled = fals
 }
 
 TruncateText.displayName = 'TruncateText'
-export default TruncateText

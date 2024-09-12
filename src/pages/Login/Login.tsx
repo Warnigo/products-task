@@ -3,7 +3,7 @@
 import { Logo } from '@/components'
 import { SwitcherLanguages, SwitcherTheme } from '@/layouts/Protected/Header'
 import { AnimatedWrapper, FadeInUp } from '@/shared/motion'
-import { Form } from './Form'
+import Form from './Form'
 
 const Login = () => (
   <div className="container relative flex h-screen flex-col items-center justify-center gap-4">

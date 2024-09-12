@@ -15,7 +15,7 @@ type Props = {
   hideButton?: boolean
 }
 
-const Post: FC<Props> = ({ data, hideButton = false }) => {
+export const Post: FC<Props> = ({ data, hideButton = false }) => {
   const t = useI18n()
 
   return (
@@ -67,4 +67,3 @@ const Post: FC<Props> = ({ data, hideButton = false }) => {
 }
 
 Post.displayName = 'Post'
-export default Post

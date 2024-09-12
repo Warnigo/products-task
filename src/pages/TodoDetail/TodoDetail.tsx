@@ -5,7 +5,7 @@ import { Breadcrumb, Spinner } from '@/components'
 import { Separator } from '@/components/ui'
 import { useGetSingleTodo } from '@/shared/query-hooks'
 import { Todo } from '@/widgets/Todo'
-import { TodoRandom } from './TodoRandom'
+import TodoRandom from './TodoRandom'
 
 interface Props {
   todoId: string

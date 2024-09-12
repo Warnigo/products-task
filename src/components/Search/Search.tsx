@@ -6,7 +6,7 @@ type Props = {
   onChange: (value: string) => void
 }
 
-const Search = ({ value, onChange }: Props) => {
+export const Search = ({ value, onChange }: Props) => {
   const t = useI18n()
 
   return (
@@ -22,4 +22,3 @@ const Search = ({ value, onChange }: Props) => {
 }
 
 Search.displayName = 'Search'
-export default Search

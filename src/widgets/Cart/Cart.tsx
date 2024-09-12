@@ -9,7 +9,7 @@ type Props = {
   data: CartType | null
 }
 
-const Cart: FC<Props> = ({ data }) => {
+export const Cart: FC<Props> = ({ data }) => {
   const t = useI18n()
 
   if (!data || (data.total === 0 && data.discountedTotal === 0)) {
@@ -35,4 +35,3 @@ const Cart: FC<Props> = ({ data }) => {
 }
 
 Cart.displayName = 'Cart'
-export default Cart

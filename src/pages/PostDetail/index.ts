@@ -1,1 +1,1 @@
-export { default as PostDetail } from './PostDetail'
+export { default } from './PostDetail'

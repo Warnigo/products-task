@@ -1,1 +1,1 @@
-export { default as ProfileTab } from './Tab'
+export { default } from './Tab'

@@ -14,7 +14,7 @@ import {
 import { getInitials } from '@/helpers/utils'
 import { useI18n } from '@/locales/client'
 import { useGetUser } from '@/shared/query-hooks'
-import { ProfileTab } from './Tab'
+import ProfileTab from './Tab'
 
 const Profile = () => {
   const t = useI18n()

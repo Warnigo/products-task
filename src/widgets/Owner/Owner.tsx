@@ -10,7 +10,7 @@ interface Props {
   userId: number
 }
 
-const Owner: FC<Props> = ({ userId }) => {
+export const Owner: FC<Props> = ({ userId }) => {
   const { data, isLoading } = useGetUserSingle(userId)
 
   if (isLoading || !data) {
@@ -35,4 +35,3 @@ const Owner: FC<Props> = ({ userId }) => {
 }
 
 Owner.displayName = 'Owner'
-export default Owner

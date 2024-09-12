@@ -11,7 +11,7 @@ type Props = {
   setCategoryValue: (value: string) => void
 }
 
-export const Categories = ({ categoryValue, setCategoryValue }: Props) => {
+const Categories = ({ categoryValue, setCategoryValue }: Props) => {
   const { data, isLoading } = useGetAllProductCategory()
   const searchParams = useSearchParams()
   const searchQuery = searchParams?.get('category') ?? ''
@@ -65,3 +65,5 @@ export const Categories = ({ categoryValue, setCategoryValue }: Props) => {
     </div>
   )
 }
+
+export default Categories

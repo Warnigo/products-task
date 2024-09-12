@@ -15,7 +15,7 @@ type Props = {
   hideButton?: boolean
 }
 
-const Todo: FC<Props> = ({ data, hideButton = false }) => {
+export const Todo: FC<Props> = ({ data, hideButton = false }) => {
   const t = useI18n()
 
   return (
@@ -50,4 +50,3 @@ const Todo: FC<Props> = ({ data, hideButton = false }) => {
 }
 
 Todo.displayName = 'Todo'
-export default Todo

@@ -1,1 +1,1 @@
-export { default as TodoRandom } from './TodoRandom'
+export { default } from './TodoRandom'

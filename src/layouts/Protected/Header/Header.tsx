@@ -16,7 +16,7 @@ import { UserMenu } from './UserMenu'
 
 type TranslationKey = 'layout.todos' | 'layout.posts' | 'carts'
 
-const Header = () => {
+export const Header = () => {
   const pathname = usePathname()
   const strippedPathname = getStripLocale(pathname ?? '')
   const t = useI18n()
@@ -67,4 +67,3 @@ const Header = () => {
 }
 
 Header.displayName = 'Header'
-export default Header

@@ -1,1 +1,1 @@
-export { default as TruncateText } from './TruncateText'
+export { TruncateText } from './TruncateText'

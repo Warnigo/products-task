@@ -16,7 +16,7 @@ type Props = {
   back?: string
 }
 
-const Breadcrumb: FC<Props> = memo(({ title, backLink, back }: Props) => {
+export const Breadcrumb: FC<Props> = memo(({ title, backLink, back }: Props) => {
   const t = useI18n()
 
   return (
@@ -37,4 +37,3 @@ const Breadcrumb: FC<Props> = memo(({ title, backLink, back }: Props) => {
 })
 
 Breadcrumb.displayName = 'Breadcrumb'
-export default Breadcrumb

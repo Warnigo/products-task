@@ -14,7 +14,7 @@ type Props = {
   hideButton?: boolean
 }
 
-const Product = ({ data, hideButton = false }: Props) => {
+export const Product = ({ data, hideButton = false }: Props) => {
   const t = useI18n()
 
   const discountedPrice = data.price * (1 - data.discountPercentage / 100)
@@ -87,4 +87,3 @@ const Product = ({ data, hideButton = false }: Props) => {
 }
 
 Product.displayName = 'Product'
-export default Product

@@ -12,7 +12,7 @@ import {
   useGetProductSearch,
 } from '@/shared/query-hooks'
 import { Product } from '@/widgets/Product'
-import { Categories } from './Categories'
+import Categories from './Categories'
 
 const Products = () => {
   const t = useI18n()
