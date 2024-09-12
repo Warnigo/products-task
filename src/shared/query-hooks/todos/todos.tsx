@@ -10,24 +10,18 @@ import {
 import { TodoAddParams } from '@/types'
 import { queryKeys } from '../query-keys'
 
-export const useGetTodos = () => {
-  const { data, isLoading } = useQuery({
+export const useGetTodos = () =>
+  useQuery({
     queryKey: [queryKeys.todos],
     queryFn: getTodos,
     staleTime: 60 * 60 * 1,
   })
 
-  return { data, isLoading }
-}
-
-export const useGetTodoRandom = () => {
-  const { data, isLoading } = useQuery({
+export const useGetTodoRandom = () =>
+  useQuery({
     queryKey: [queryKeys.todoRandom],
     queryFn: getTodoRandom,
   })
-
-  return { data, isLoading }
-}
 
 export const useGetSingleTodo = (todoId: string) =>
   useQuery({
@@ -39,20 +33,14 @@ export const useGetSingleTodo = (todoId: string) =>
     retryDelay: 1000,
   })
 
-export const usePostAddTodo = () => {
-  const { mutate, isPending } = useMutation({
+export const usePostAddTodo = () =>
+  useMutation({
     mutationKey: [queryKeys.todoAdd],
     mutationFn: (todoAddParams: TodoAddParams) => postAddTodo(todoAddParams),
   })
 
-  return { mutate, isPending }
-}
-
-export const useDeleteTodo = () => {
-  const { mutate, isPending } = useMutation({
+export const useDeleteTodo = () =>
+  useMutation({
     mutationKey: [queryKeys.todoAdd],
     mutationFn: ({ todoId, completed }: deleteTodoProps) => deleteTodo({ todoId, completed }),
   })
-
-  return { mutate, isPending }
-}

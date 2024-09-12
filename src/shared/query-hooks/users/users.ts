@@ -16,15 +16,12 @@ export const useGetAllUsers = () =>
     staleTime: 60 * 60 * 1,
   })
 
-export const useGetUserSingle = (userId: number) => {
-  const { data, isLoading } = useQuery({
+export const useGetUserSingle = (userId: number) =>
+  useQuery({
     queryKey: [queryKeys.userSingle(userId)],
     queryFn: () => getSingleUser(userId),
     staleTime: 60 * 60 * 1,
   })
-
-  return { data, isLoading }
-}
 
 export const useGetUserSearch = (search: string) =>
   useQuery({
@@ -33,8 +30,8 @@ export const useGetUserSearch = (search: string) =>
     staleTime: 60 * 60 * 1,
   })
 
-export const useGetUserCarts = (userId: number) => {
-  const { data, isLoading } = useQuery({
+export const useGetUserCarts = (userId: number) =>
+  useQuery({
     queryKey: [queryKeys.userIdCarts(userId)],
     queryFn: () => getUserCarts(userId),
     staleTime: 5 * 60 * 1000,
@@ -42,11 +39,8 @@ export const useGetUserCarts = (userId: number) => {
     retryDelay: 1000,
   })
 
-  return { data, isLoading }
-}
-
-export const useGetUserPosts = (userId: number) => {
-  const { data, isLoading } = useQuery({
+export const useGetUserPosts = (userId: number) =>
+  useQuery({
     queryKey: [queryKeys.userIdPosts(userId)],
     queryFn: () => getUserPosts(userId),
     staleTime: 5 * 60 * 1000,
@@ -54,17 +48,11 @@ export const useGetUserPosts = (userId: number) => {
     retryDelay: 1000,
   })
 
-  return { data, isLoading }
-}
-
-export const useGetUserTodos = (userId: number) => {
-  const { data, isLoading } = useQuery({
+export const useGetUserTodos = (userId: number) =>
+  useQuery({
     queryKey: [queryKeys.userIdTodos(userId)],
     queryFn: () => getUserTodos(userId),
     staleTime: 5 * 60 * 1000,
     retry: 3,
     retryDelay: 1000,
   })
-
-  return { data, isLoading }
-}
