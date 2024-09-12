@@ -1,6 +1,6 @@
 import { getMetadata } from '@/helpers/utils'
 import { getI18n } from '@/locales/server'
-import Profile from '@/pages/Profile'
+import Profile from '@/modules/Profile'
 
 export async function generateMetadata() {
   const t = await getI18n()

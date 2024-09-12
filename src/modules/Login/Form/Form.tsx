@@ -54,6 +54,7 @@ const Form = () => {
 
     login(requestParams, {
       onSuccess: () => {
+        router.prefetch(ROUTES.home)
         router.push(ROUTES.home)
       },
       onError: (error) => {

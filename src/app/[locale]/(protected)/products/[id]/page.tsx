@@ -1,6 +1,6 @@
 import { getMetadata } from '@/helpers/utils'
 import { getI18n } from '@/locales/server'
-import ProductDetail from '@/pages/ProductDetail'
+import ProductDetail from '@/modules/ProductDetail'
 
 type Props = {
   params: {

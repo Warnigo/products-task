@@ -1,6 +1,6 @@
 import { getMetadata } from '@/helpers/utils'
 import { getI18n } from '@/locales/server'
-import CreatePost from '@/pages/CreatePost'
+import CreatePost from '@/modules/CreatePost'
 
 export async function generateMetadata() {
   const t = await getI18n()

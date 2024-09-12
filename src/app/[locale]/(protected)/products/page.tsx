@@ -1,6 +1,6 @@
 import { getMetadata } from '@/helpers/utils'
 import { getI18n } from '@/locales/server'
-import Products from '@/pages/Products'
+import Products from '@/modules/Products'
 
 export async function generateMetadata() {
   const t = await getI18n()
