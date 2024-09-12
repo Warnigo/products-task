@@ -81,15 +81,17 @@ const CreatePost = () => {
           </FormControlField>
 
           <div className="flex w-full items-center justify-end">
-            <AnimateButton
-              roleIcon={
-                finish ? <CircleCheck className="size-5" /> : <CirclePlus className="size-5" />
-              }
-              disabled={isPending}
-              type="submit"
-            >
-              {finish ? t('done') : t('create')}
-            </AnimateButton>
+            <div>
+              <AnimateButton
+                roleIcon={
+                  finish ? <CircleCheck className="size-5" /> : <CirclePlus className="size-5" />
+                }
+                disabled={isPending}
+                type="submit"
+              >
+                {finish ? t('done') : t('create')}
+              </AnimateButton>
+            </div>
           </div>
         </FormProvider>
       </Card>

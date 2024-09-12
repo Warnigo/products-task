@@ -1,7 +1,12 @@
 import { Input } from '@/components/ui'
 import { useI18n } from '@/locales/client'
 
-const PostSearch = ({ value, onChange }: { value: string; onChange: (value: string) => void }) => {
+type Props = {
+  value: string
+  onChange: (value: string) => void
+}
+
+const Search = ({ value, onChange }: Props) => {
   const t = useI18n()
 
   return (
@@ -16,5 +21,5 @@ const PostSearch = ({ value, onChange }: { value: string; onChange: (value: stri
   )
 }
 
-PostSearch.displayName = 'PostSearch'
-export default PostSearch
+Search.displayName = 'Search'
+export default Search

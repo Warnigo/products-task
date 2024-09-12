@@ -18,4 +18,11 @@ export {
   postAddTodo,
 } from './todos'
 export { getUser } from './user'
-export { getSingleUser, getUserCarts, getUserPosts, getUserTodos } from './users'
+export {
+  getAllUsers,
+  getSingleUser,
+  getUserCarts,
+  getUserPosts,
+  getUserSearch,
+  getUserTodos,
+} from './users'

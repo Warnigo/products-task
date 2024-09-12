@@ -1,4 +1,13 @@
-import { Cart, CartsResponse, Post, PostsResponse, Todo, TodosResponse, Users } from '@/types'
+import {
+  Cart,
+  CartsResponse,
+  Post,
+  PostsResponse,
+  Todo,
+  TodosResponse,
+  Users,
+  UsersResponse,
+} from '@/types'
 import { axiosInstance } from '../axios-instance'
 import { endpoints } from '../endpoints'
 
@@ -7,10 +16,33 @@ const handleApiError = (error: unknown) => {
   throw error
 }
 
+export const getAllUsers = async (): Promise<UsersResponse<Users[]>> => {
+  try {
+    const data = await axiosInstance.get<UsersResponse<Users[]>>(endpoints.users, {
+      useAuth: false,
+    })
+
+    return data
+  } catch (error) {
+    return handleApiError(error)
+  }
+}
+
 export const getSingleUser = async (userId: number): Promise<Users> => {
   try {
     const url = endpoints.userId.replace(':id', String(userId))
     const data = await axiosInstance.get<Users>(url, { useAuth: false })
+
+    return data
+  } catch (error) {
+    return handleApiError(error)
+  }
+}
+
+export const getUserSearch = async (search: string): Promise<UsersResponse<Users[]>> => {
+  try {
+    const url = endpoints.userSearch.replace(':name', search)
+    const data = await axiosInstance.get<UsersResponse<Users[]>>(url, { useAuth: false })
 
     return data
   } catch (error) {

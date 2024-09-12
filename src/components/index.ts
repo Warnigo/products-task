@@ -1,6 +1,8 @@
 export { AnimateButton } from './AnimateButton'
 export { Breadcrumb } from './Breadcrumb'
 export { Icons } from './Icons'
+export { InfoItem } from './InfoItem'
 export { Logo } from './Logo'
+export { Search } from './Search'
 export { Spinner } from './Spinner'
 export { TruncateText } from './TruncateText'

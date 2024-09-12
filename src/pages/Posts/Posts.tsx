@@ -4,13 +4,12 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { CirclePlus } from 'lucide-react'
-import { AnimateButton, Spinner } from '@/components'
+import { AnimateButton, Search, Spinner } from '@/components'
 import { Separator } from '@/components/ui'
 import { ROUTES } from '@/constants'
 import { useI18n } from '@/locales/client'
 import { useGetAllPosts, useGetSearchPost } from '@/shared/query-hooks'
 import { Post } from '@/widgets/Post'
-import PostSearch from './Search'
 
 const Posts = () => {
   const t = useI18n()
@@ -57,7 +56,7 @@ const Posts = () => {
 
         <div className="flex items-center gap-3">
           <div className="w-96">
-            <PostSearch value={searchTerm} onChange={handleSearch} />
+            <Search value={searchTerm} onChange={handleSearch} />
           </div>
 
           <div className="flex items-center">

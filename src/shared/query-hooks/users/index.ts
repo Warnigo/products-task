@@ -1,1 +1,8 @@
-export { useGetUserCarts, useGetUserPosts, useGetUserSingle, useGetUserTodos } from './users'
+export {
+  useGetAllUsers,
+  useGetUserCarts,
+  useGetUserPosts,
+  useGetUserSearch,
+  useGetUserSingle,
+  useGetUserTodos,
+} from './users'

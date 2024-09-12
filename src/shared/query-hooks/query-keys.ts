@@ -6,6 +6,8 @@ export const queryKeys = {
   todoAdd: 'todoAdd',
   todoSingle: 'todoSingle',
   todoDelete: 'todoDelete',
+  users: 'users',
+  usersSearch: 'users-search',
   userSingle: (userId: number) => `${userId} user`,
   userIdCarts: (userId: number) => `carts by ${userId} user`,
   userIdPosts: (userId: number) => `posts by ${userId} user`,

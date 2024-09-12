@@ -10,8 +10,12 @@ export const menu = [
     link: ROUTES.posts,
   },
   {
-    title: 'carts',
-    link: ROUTES.cards,
+    title: 'layout.products',
+    link: ROUTES.products,
+  },
+  {
+    title: 'layout.users',
+    link: ROUTES.users,
   },
 ] as const
 
